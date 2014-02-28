@@ -102,17 +102,29 @@ end
 
 # add up all the numbers in an array, so [1, 3, 5, 6]
 # returns 15
+def total_of_array(array)
+	array.inject(:+)
+end
 
 
 # turn an array into itself repeated twice. So [1, 2, 3]
 # becomes [1, 2, 3, 1, 2, 3]
 
+def double_array(array)
+	array*2
+end
 
 # convert a symbol into a string
+def turn_symbol_into_string(symbol)
+	symbol.to_s
+end
 
 
 # get the average from an array, rounded to the nearest integer
 # so [10, 15, 25] should return 33
+def average_of_array(array)
+	((array.inject(:+))/((array.count).to_f)).round
+end
 
 
 # get all the elements in an array, up until the first element
