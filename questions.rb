@@ -261,7 +261,8 @@ end
 # the list of bank holidays is here:
 # https://www.gov.uk/bank-holidays
 def is_a_2014_bank_holiday?(date)
-
+	holidays = ["18-04-2014", "21-04-2014", "05-05-2014", "26-05-2014", "25-08-2014", "25-12-2014", "26-12-2014"]
+	holidays.include?(date.strftime("%d-%m-%Y"))
 end
 
 # given your birthday this year, this method tells you
@@ -269,7 +270,12 @@ end
 # e.g. january 1st, will next be a friday in 2016
 # return the day as a capitalized string like 'Friday'
 def your_birthday_is_on_a_friday_in_the_year(date)
-
+		n = 0
+	while !date.friday? do
+		n=+1
+		date = Time.new((date.year + n), date.month, date.day)
+	end
+		date.year
 end
 
 
