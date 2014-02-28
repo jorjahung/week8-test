@@ -189,10 +189,16 @@ end
 
 # take a date and format it like dd/mm/yyyy, so Halloween 2013
 # becomes 31/10/2013
+def format_date_nicely(date)
+	date.strftime("%d/%m/%Y")
+end
 
 
 # get the domain name *without* the .com part, from an email address
 # so alex@makersacademy.com becomes makersacademy
+def get_domain_name_from_email_address(email)
+	email[/@([^.]*)/, 1]
+end
 
 
 # capitalize the first letter in each word of a string, 
@@ -200,7 +206,10 @@ end
 # *unless* they come at the start of the start of the string, e.g.
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
-
+def titleize_a_string(string)
+	ignore = ["a", "and", "the"]
+	string.capitalize.split.each { |word|	word.capitalize! if ! ignore.include? word }.join(" ")
+end
 
 # return true if a string contains any special characters
 # where 'special character' means anything apart from the letters
