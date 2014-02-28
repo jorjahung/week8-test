@@ -260,12 +260,17 @@ end
 # return true if the date is a uk bank holiday for 2014
 # the list of bank holidays is here:
 # https://www.gov.uk/bank-holidays
+def is_a_2014_bank_holiday?(date)
 
+end
 
 # given your birthday this year, this method tells you
 # the next year when your birthday will fall on a friday
 # e.g. january 1st, will next be a friday in 2016
 # return the day as a capitalized string like 'Friday'
+def your_birthday_is_on_a_friday_in_the_year(date)
+
+end
 
 
 # in a file, total the number of times words of different lengths
@@ -273,7 +278,10 @@ end
 # I have 5 words which are 3 letters long, 1 which is 2 letters long
 # and 1 that is 4 letters long. Return it as a hash in the format
 # word_length => count, e.g. {2 => 1, 3 => 5, 4 => 1}
-
+def count_words_of_each_length_in_a_file(file)
+		words = File.open(file, "r").read.split(/\W+/)
+		words.map {|word| word.size}.inject(Hash.new(0)) { |key,value| key[value] += 1; key }
+end
 
 # implement fizzbuzz without modulo, i.e. the % method
 # go from 1 to 100
