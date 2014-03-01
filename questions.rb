@@ -292,11 +292,26 @@ end
 # implement fizzbuzz without modulo, i.e. the % method
 # go from 1 to 100
 # (there's no RSpec test for this one)
+def divisible_by?(n,x)
+  n-(n/x*x) == 0 ? true : false
+end
 
+def fizzbuzz(n)
+	f = "Fizz" if divisible_by?(n,3) 
+	b = "Buzz" if divisible_by?(n,5) 
+	f || b ? "#{f}#{b}" : n
+end
 
 # print the lyrics of the song 99 bottles of beer on the wall
 # http://www.99-bottles-of-beer.net/lyrics.html
 # make sure you use the singular when you have one bottle of 
 # beer on the wall, and print 'no more bottles of beer on the wall'
 # at the end.
-# (there's no RSpec test for this one)
+def sing_me_a_song
+  99.downto(1) do |i|
+   	"#{i} bottle#{i==1 ? '' : 's'} of beer on the wall, #{i} bottle#{i==1 ? '' : 's'} of beer"
+    "Take one down, pass it around, #{i-1} bottle#{i-1==1 ? '' : 's'} of beer on the wall\n\n" if i > 1
+  end
+  "Take one down, pass it around, no more bottles of beer on the wall :(\n\n"
+  "No more bottles of beer on the wall, no more bottles of beer\nGo to the store and buy some more, 99 bottles of beer on the wall!!! :)"
+end
