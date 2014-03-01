@@ -1,8 +1,6 @@
-FizzBuzz Challenge
+Week 8 - Test
 =================
 
-The aim of this kata is to implement a FizzBuzz method. The method replaces any number divisible by 3 with 'Fizz', and number divisible by 5 with 'Buzz', and any number divisible by both 3 and 5 with 'FizzBuzz'. Other numbers remain untouched.
-
-Status: CHALLENGE ACCEPTED!
+The Ruby refresher test where we revisit the basics of Ruby. 
 -----------
 
